@@ -1,7 +1,7 @@
 #include "PriorityQueue.h"
 
 /* Default constructor */
-PriorityQueue::PriorityQueue() : heapsize {0};
+PriorityQueue::PriorityQueue() : heapSize (0) {} ;
 
 
 /* Parameterized constructor initializes heap size with number of nodes */
