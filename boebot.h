@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-// A steer is a male cow :-)
-// Seriously, if this has something to do with steering, turn it into a noun.
 class Navigate
 {
      public:

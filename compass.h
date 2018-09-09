@@ -1,7 +1,7 @@
 #include "HMC6352.h"
 #include "boebot.h"
 
-//documentation? what is this?
+// Class module for digital compass (HMC6352)
 class compass{    
     public: 
         
@@ -9,6 +9,5 @@ class compass{
         ~compass();
         int getPos();
         int gotoPos(int final_Pos);
-
 };
 

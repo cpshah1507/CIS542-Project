@@ -64,4 +64,3 @@ std::deque<unsigned int> Dijkstra::findShortest(unsigned int sourceNode, unsigne
     shortestPath.push_front(NodeIterator);
     return shortestPath;
 }
-

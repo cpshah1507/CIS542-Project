@@ -1,4 +1,4 @@
-CIS542-Project
+Prototype of Automated Guided Vehicle
 ==============
 
-Indoor Navigation System using ZigBee Modules
+- Guided navigation for Boebot robot using ZigBee Modules as nodes

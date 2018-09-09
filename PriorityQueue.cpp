@@ -3,7 +3,6 @@
 /* Default constructor */
 PriorityQueue::PriorityQueue() : heapSize (0) {} ;
 
-
 /* Parameterized constructor initializes heap size with number of nodes */
 PriorityQueue::PriorityQueue(unsigned int sourceNodeID, unsigned int nodeNo)
 {
@@ -26,7 +25,6 @@ PriorityQueue::PriorityQueue(unsigned int sourceNodeID, unsigned int nodeNo)
         heapify(j);
 }
 
-
 /* Extract the highest priority element */
 void PriorityQueue::extractMin()
 {
@@ -44,54 +42,50 @@ bool PriorityQueue::decreasepriority(unsigned int nodeID,unsigned int newpriorit
     {
         node[indexMap[nodeID-1]].priority = newpriority;
         unsigned int thisNode = indexMap[nodeID-1];
-    unsigned int parentNode = thisNode/2;
-    
-    
-    //percolate the node with the decreased value up
-    while(node[thisNode].priority < node[parentNode].priority && thisNode > 1)
-    {
-       swapNodes(thisNode, parentNode);
-       thisNode = parentNode;
-       parentNode = thisNode/2;
+        unsigned int parentNode = thisNode/2;
         
-    }
+        //percolate the node with the decreased value up
+        while(node[thisNode].priority < node[parentNode].priority && thisNode > 1)
+        {
+           swapNodes(thisNode, parentNode);
+           thisNode = parentNode;
+           parentNode = thisNode/2;
+            
+        }
         return true;
     }
-     
-   
-    
     return false;
 }
-
-
 
 /* Iterative Solution heapify -  Given the index of parent it maintains the min heap structure*/
 void PriorityQueue::heapify(unsigned parent)
 {
 	unsigned smallest, left, right;
 	
-	while(1)
+	while(true)
 	{
 		left = parent * 2;
 		right = parent * 2 +1;
-		/* compare priority with left child */
+		
+        /* compare priority with left child */
 		if(left <= heapSize && node[left].priority < node[parent].priority)
         		smallest = left;
-    		else
-        		smallest = parent;
-        	/* compare priority with right child */	
-    		if(right <= heapSize && node[right].priority < node[smallest].priority)
-	        	smallest = right;
-        	if(smallest != parent)
-    		{
-        		swapNodes(parent,smallest);
-			parent = smallest;
-    		}
-    		else
-    		{
-    			break;
-    		}
-	} // end of while
+		else
+    		smallest = parent;
+    	
+        /* compare priority with right child */	
+		if(right <= heapSize && node[right].priority < node[smallest].priority)
+        	smallest = right;
+    	if(smallest != parent)
+		{
+    		swapNodes(parent,smallest);
+            parent = smallest;
+		}
+		else
+		{
+			break;
+		}
+	}
 }
 
 /* Swap two nodes */
@@ -104,7 +98,6 @@ void PriorityQueue::swapNodes(unsigned int leftIndex,unsigned int rightIndex)
     indexMap[node[leftIndex].nodeID-1] = leftIndex;
     indexMap[node[rightIndex].nodeID-1] = rightIndex;
 }
-
 
 /* Return the node from Priority Queue at specified index */
 heapNode PriorityQueue::at(unsigned int nodeID)
@@ -129,4 +122,3 @@ heapNode PriorityQueue::getRoot()
 {
 	return node[1];
 }
-

@@ -55,4 +55,3 @@ int compass::gotoPos(int final_pos)
         
         return 0;      
 }
-
