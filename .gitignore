@@ -1,3 +1,4 @@
-mbed/
+.DS_Store
 mbed.bld
 me.*
+mbed/
